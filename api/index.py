@@ -2,7 +2,6 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 import numpy as np
-import json
 
 app = FastAPI()
 
@@ -24,7 +23,7 @@ def root():
 async def options_handler():
     return Response(status_code=200)
 
-TELEMETRY_DATA = json.loads([
+TELEMETRY_DATA = ([
   {
     "region": "apac",
     "service": "checkout",
